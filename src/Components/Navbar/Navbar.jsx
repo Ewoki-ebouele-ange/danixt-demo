@@ -13,6 +13,18 @@ export default function Navbar(){
         list.classList.toggle('show');
     })
 
+    const hamburger = document.querySelector(".hamburger");
+    const ulNavbar = document.querySelector(".nav-ul");
+
+    hamburger.addEventListener("click", ()=>{
+        hamburger.classList.toggle("actived");
+        ulNavbar.classList.toggle("actived");
+    })
+
+    document.querySelectorAll(".active").forEach(n => n.addEventListener("click", ()=>{
+        hamburger.classList.remove("actived");
+        ulNavbar.classList.remove("actived");
+    }))
     
 }
 function handleChangeFr(){
@@ -28,28 +40,51 @@ function handleChangeEng(){
 
     return(
         <div className="navbar">
+            <div className="hamburger">
+               <span className="bar"></span>
+               <span className="bar"></span> 
+               <span className="bar"></span> 
+            </div>
             <div className="img-logo">
                 <img src={Img} alt="Danixt-img" />
             </div>
             <div className="head-link">
                 <ul className="nav-ul">
                     <li className="nav-item">
-                        Accueil
+                    <a href="#"> Accueil</a>
                     </li>
                     <li className="nav-item">
-                        Ressources
+                       <a href="#"> Ressources</a>
+
+                        <ul>
+                            <li> <a href="#">Guide du vendeur</a></li>
+                            <li><a href="#">Boutiques et tarifs</a></li>
+                            <li><a href="#">Points de livraison</a></li>
+                            <li><a href="#">Cartes cadeaux Danixt</a></li>
+                            <li><a href="#">Les coupons</a></li>
+                        </ul>
                     </li>
                     <li className="nav-item">
-                        Politique
+                    <a href="#">Politique</a>
+                        <ul>
+                            <li> <a href="#">Confidentialité</a></li>
+                            <li><a href="#">Mentions légales</a></li>
+                            <li><a href="#">Politique de retour</a></li>
+                            <li><a href="#">Conditions d'utilisation</a></li>
+                        </ul>
                     </li>
                     <li className="nav-item">
-                        Carrière
+                    <a href="#">Carrière</a>
+                    <ul>
+                            <li> <a href="#">Notre culture</a></li>
+                            <li><a href="#">Offres d'emplois</a></li>
+                        </ul>
                     </li>
                     <li className="nav-item">
-                        Contacts
+                    <a href="#"> Contacts</a>
                     </li>
                     <li className="nav-item">
-                        Aide
+                    <a href="#"> Aide</a>
                     </li>
                 </ul>
                 <div className="drop-down">
