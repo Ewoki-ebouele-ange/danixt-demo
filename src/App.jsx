@@ -1,10 +1,16 @@
 import './App.css';
-import { Navbar } from './Components';
+import { Navbar, Accueil } from './Components';
+import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <Router>
+      <Navbar/>
+      <Routes>
+      <Route path="/accueil" element={<Accueil />} />
+      </Routes>
+      </Router>
     </div>
   );
 }

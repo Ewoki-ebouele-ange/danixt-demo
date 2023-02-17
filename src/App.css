@@ -3,3 +3,7 @@
   flex-direction: column;
 }
 
+
+.boutique{
+  display: flex;
+}
