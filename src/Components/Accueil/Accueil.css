@@ -152,3 +152,153 @@
     text-align: center;
 }
 
+.A-propos{
+    display: flex;
+    margin: 0px 40px 0px 40px ;
+    padding-bottom: 40px;
+    gap: 3rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.a-propos-text{
+    display: flex;
+    flex-direction: column;
+}
+
+.apropos-title{
+    line-height: 55px;
+    font-weight: 600;
+    color: #2c2c51;
+    margin-bottom: 0.5rem!important;
+    font-size: 34px;
+}
+
+.propos-text{
+    font-weight: 400;
+}
+
+.advant-text-black{
+    margin: 10px 0 5px 20px;
+    color: #000000;
+}
+
+.just{
+    color: orange;
+    font-size: 15px;
+}
+
+.mb_5{
+    margin-bottom: 10px;
+}
+
+.i-frame{
+    width: 50%;
+}
+
+.i-frame iframe{
+    height: 100%;
+}
+
+.specificite-app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0px 300px;
+}
+
+.boutiq{
+    display: flex;
+    margin: 50px 40px 0px 40px ;
+    gap: 5rem;
+}
+
+.gp_1rem{
+    gap: 0;
+}
+
+.boutiq-text{
+    display: flex;
+    flex-direction: column;
+}
+
+.boutiq-img{
+    position: relative;
+}
+
+.boutiq-img img{
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+}
+
+.pulse{
+    display: flex;
+    position: absolute;
+    border-radius: 30px;
+    width: 60px;
+    height: 60px;
+    top: -26px;
+    left: -26px;
+    background-color: orange;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.pulse:after, .pulse:before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: orange;
+    border-radius: 50%;
+    opacity: 0.4;
+}
+
+.pulse:before{
+    animation: pulse 2s ease-out infinite;
+}
+
+.pulse:after{
+    animation: pulse 2s 1s ease-out infinite;
+}
+
+.pulse_blue{
+    display: flex;
+    position: absolute;
+    border-radius: 30px;
+    width: 60px;
+    height: 60px;
+    top: -26px;
+    left: -26px;
+    background-color: #1890ff;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.pulse_blue:after, .pulse_blue:before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #1890ff;
+    border-radius: 50%;
+    opacity: 0.4;
+}
+
+.pulse_blue:before{
+    animation: pulse 2s ease-out infinite;
+}
+
+.pulse_blue:after{
+    animation: pulse 2s 1s ease-out infinite;
+}
+
+@keyframes pulse{
+    100%{
+        transform: scale(2);
+        opacity: 0;
+    }
+}
