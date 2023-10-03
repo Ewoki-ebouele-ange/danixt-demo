@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Img from "../../assets/Img/title-app.png"
 import "./Navbar.css"
 import {IoIosArrowDown} from "react-icons/io"
