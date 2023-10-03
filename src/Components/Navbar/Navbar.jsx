@@ -8,7 +8,7 @@ export default function Navbar(){
 
     const [currentLink, setCurrentLink] = useState(1);
 
-useEffect(() => {
+window.onload = function (){
     const dropdown = document.querySelector(".drop-down");
     const list = document.querySelector(".list");
 
@@ -23,7 +23,7 @@ useEffect(() => {
         hamburger.classList.toggle("actived");
         ulNavbar.classList.toggle("actived");
     })    
-}, []);
+};
 
 function handleChangeFr(){
     const selected = document.querySelector(".selected");
