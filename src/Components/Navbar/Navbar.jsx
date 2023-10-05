@@ -7,8 +7,10 @@ import { NavLink } from "react-router-dom";
 export default function Navbar(){
 
     const [currentLink, setCurrentLink] = useState(1);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isMenuOpen1, setIsMenuOpen1] = useState(false);
 
-window.onload = function (){
+/*window.onload = function (){
     const dropdown = document.querySelector(".drop-down");
     const list = document.querySelector(".list");
 
@@ -23,7 +25,30 @@ window.onload = function (){
         hamburger.classList.toggle("actived");
         ulNavbar.classList.toggle("actived");
     })    
-};
+};*/
+
+    useEffect(() => {
+        const toggleMenu = () => {
+          setIsMenuOpen(!isMenuOpen);
+        };
+
+        const toggleMenu1 = () => {
+          setIsMenuOpen1(!isMenuOpen1);
+        };
+
+        const dropdown = document.querySelector(".drop-down");
+        const list = document.querySelector(".list");
+        const hamburger = document.querySelector(".hamburger");
+        const ulNavbar = document.querySelector(".nav-ul");
+    
+        hamburger.addEventListener("click", toggleMenu);
+        dropdown.addEventListener("click", toggleMenu1);
+        
+        return () => {
+          hamburger.removeEventListener("click", toggleMenu);
+          dropdown.removeEventListener("click", toggleMenu1);
+        };
+      }, [isMenuOpen,isMenuOpen1]);
 
 function handleChangeFr(){
     const selected = document.querySelector(".selected");
@@ -38,7 +63,7 @@ function handleChangeEng(){
 
     return(
         <div className="navbar">
-            <div className="hamburger">
+            <div className={`hamburger ${isMenuOpen ? "actived" : ""}`}>
                <span className="bar"></span>
                <span className="bar"></span> 
                <span className="bar"></span> 
@@ -47,7 +72,7 @@ function handleChangeEng(){
                 <img src={Img} alt="Danixt-img" />
             </div>
             <div className="head-link">
-                <ul className="nav-ul">
+                <ul className={`nav-ul ${isMenuOpen ? "actived" : ""}`}>
                     <li className={currentLink === 2 ? "active" : "none"}
                         onClick={() => setCurrentLink(2)}>
                     <NavLink to="/accueil" className="nav-item">
@@ -112,7 +137,7 @@ function handleChangeEng(){
                     </NavLink>
                     </li>
                 </ul>
-                <div className="drop-down">
+                <div className={`drop-down ${isMenuOpen1 ? "show" : ""}`}>
                     <div className="wrapper">
                         <div className="selected">Français</div>
                     </div>
