@@ -142,7 +142,7 @@ function handleChangeEng(){
                         <div className="selected">Français</div>
                     </div>
                     <IoIosArrowDown className="arrow" />
-                    <div className="list">
+                    <div className={`list ${isMenuOpen1 ? "show" : ""}`}>
                         <div className="item">
                             <div className="text" onClick={handleChangeFr}>Français</div>
                             <div className="text" onClick={handleChangeEng}>English</div>
